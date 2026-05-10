@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SR PROJECTION | Professional Event Solutions</title>
+  <meta name="description" content="Professional projector rental, LED/SMD screens, sound systems, and event planning services in Karachi." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: #d4af37;
+      border-radius: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .logo h2 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: #d4af37;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(to bottom, #000, #07142b, #000);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(212,175,55,0.3), transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 1s ease;
+    }
+
+    .hero-content img {
+      width: 180px;
+      margin-bottom: 25px;
+      filter: drop-shadow(0 0 20px rgba(212,175,55,0.5));
+    }
+
+    .hero h1 {
+      font-size: 65px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      color: #cfcfcf;
+      margin-top: 20px;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #d4af37;
+      color: black;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-outline {
+      border: 2px solid #d4af37;
+      color: #d4af37;
+    }
+
+    .btn-outline:hover {
+      background: #d4af37;
+      color: black;
+    }
+
+    /* SECTION */
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 48px;
+      margin-bottom: 60px;
+      font-weight: 800;
+    }
+
+    .section-title span {
+      color: #d4af37;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #07142b;
+      padding: 40px 30px;
+      border-radius: 25px;
+      border: 1px solid rgba(212,175,55,0.2);
+      transition: 0.4s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card .icon {
+      font-size: 55px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      color: #d4af37;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .service-card p {
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    /* GALLERY */
+    .gallery {
+      background: #07142b;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .gallery-item {
+      height: 260px;
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(to bottom right, #000, #07142b);
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* PRICING */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .pricing-card {
+      background: #07142b;
+      padding: 40px;
+      border-radius: 25px;
+      border: 1px solid rgba(212,175,55,0.2);
+      transition: 0.4s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .pricing-card h3 {
+      font-size: 32px;
+      color: #d4af37;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 26px;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .pricing-card ul li {
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #07142b;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .contact-box {
+      background: #000;
+      padding: 40px;
+      border-radius: 25px;
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+
+    .contact-box h3 {
+      color: #d4af37;
+      margin-bottom: 25px;
+      font-size: 30px;
+    }
+
+    .contact-box p {
+      margin-bottom: 18px;
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      border: none;
+      background: #07142b;
+      color: white;
+      outline: none;
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      background: #d4af37;
+      color: black;
+      font-weight: 700;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      transform: translateY(-5px);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 25px;
+      text-align: center;
+      border-top: 1px solid rgba(212,175,55,0.15);
+      color: #999;
+      background: black;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 65px;
+      height: 65px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      z-index: 999;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      animation: pulse 2s infinite;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section-title {
+        font-size: 38px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container nav-container">
+      <div class="logo">
+        <img src="logo.png" alt="SR Projection Logo">
+        <h2>SR <span>PROJECTION</span></h2>
+      </div>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <img src="logo.png" alt="SR Projection">
+
+      <h1>
+        Professional Event <span>Solutions</span>
+      </h1>
+
+      <p>
+        Projector Rentals • LED/SMD Screens • Sound Systems • Event Planning
+      </p>
+
+      <div class="hero-buttons">
+        <a href="https://wa.me/923032285106" class="btn btn-primary">
+          Book on WhatsApp
+        </a>
+
+        <a href="#services" class="btn btn-outline">
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="reveal">
+    <div class="container">
+      <h2 class="section-title">
+        Our <span>Services</span>
+      </h2>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="icon">🎥</div>
+          <h3>Projector Setup</h3>
+          <p>
+            Professional projector rental and setup services for meetings, weddings, seminars and events.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">📺</div>
+          <h3>LED/SMD Screens</h3>
+          <p>
+            Bright and crystal clear SMD screen solutions for indoor and outdoor events.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🔊</div>
+          <h3>Sound Systems</h3>
+          <p>
+            Powerful professional audio systems for conferences, concerts and events.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🎉</div>
+          <h3>Event Planning</h3>
+          <p>
+            Complete event setup and management with professional technical support.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery reveal" id="gallery">
+    <div class="container">
+      <h2 class="section-title">
+        Recent <span>Setups</span>
+      </h2>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop" alt="Setup 1">
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop" alt="Setup 2">
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1200&auto=format&fit=crop" alt="Setup 3">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="reveal">
+    <div class="container">
+      <h2 class="section-title">
+        Pricing <span>Packages</span>
+      </h2>
+
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <h3>Basic Setup</h3>
+          <div class="price">Starting From Rs. 10,000</div>
+
+          <ul>
+            <li>✅ Projector Setup</li>
+            <li>✅ Projection Screen</li>
+            <li>✅ Technical Support</li>
+          </ul>
+
+          <a href="https://wa.me/923032285106" class="btn btn-primary">
+            Book Now
+          </a>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Premium Event</h3>
+          <div class="price">Custom Pricing</div>
+
+          <ul>
+            <li>✅ SMD Screen</li>
+            <li>✅ Sound System</li>
+            <li>✅ Full Event Setup</li>
+          </ul>
+
+          <a href="https://wa.me/923032285106" class="btn btn-primary">
+            Book Now
+          </a>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Corporate Package</h3>
+          <div class="price">Custom Pricing</div>
+
+          <ul>
+            <li>✅ Conference Setup</li>
+            <li>✅ Professional Audio</li>
+            <li>✅ Technical Team</li>
+          </ul>
+
+          <a href="https://wa.me/923032285106" class="btn btn-primary">
+            Book Now
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact reveal" id="contact">
+    <div class="container">
+      <h2 class="section-title">
+        Contact <span>Us</span>
+      </h2>
+
+      <div class="contact-wrapper">
+
+        <div class="contact-box">
+          <h3>Business Info</h3>
+
+          <p>📞 WhatsApp: 03032285106</p>
+          <p>📧 Email: srprojection24@gmail.com</p>
+          <p>📸 Instagram: @sr_projection</p>
+          <p>📘 Facebook: SR Projection</p>
+          <p>📍 Karachi, Pakistan</p>
+        </div>
+
+        <div class="contact-box">
+          <h3>Quick Inquiry</h3>
+
+          <form class="contact-form">
+            <input type="text" placeholder="Your Name">
+            <input type="text" placeholder="Phone Number">
+            <textarea rows="5" placeholder="Tell us about your event"></textarea>
+
+            <button type="submit">Send Inquiry</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 SR PROJECTION — Professional Event Solutions
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/923032285106" class="whatsapp">
+    💬
+  </a>
+
+  <!-- JS -->
+  <script>
+    window.addEventListener('scroll', reveal);
+
+    function reveal() {
+      let reveals = document.querySelectorAll('.reveal');
+
+      for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let revealTop = reveals[i].getBoundingClientRect().top;
+        let revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
